@@ -92,30 +92,14 @@
         }
         
         .accordion-toggle:checked ~ .accordion-content {
-            max-height: 7000px; /* Espacio de sobra para renderizar las 10 imágenes .jpg */
+            max-height: 9000px; /* Espacio suficiente para albergar todas las imágenes */
             padding: 20px;
         }
         .accordion-toggle:checked ~ .accordion-header::after {
             transform: rotate(180deg);
         }
 
-        /* Contenido de la sección de desinstalación */
-        .desinstalacion-text {
-            color: #444;
-            line-height: 1.6;
-            font-size: 1.05rem;
-            text-align: left;
-        }
-        .alert-box {
-            background-color: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            color: #856404;
-        }
-
-        /* Estilos del manual de instalación */
+        /* Estilos del manual de pasos */
         .step {
             margin-bottom: 35px;
             padding-bottom: 20px;
@@ -157,29 +141,60 @@
     <!-- Contenedor General de los Menús Desplegables -->
     <div class="accordion-wrapper">
 
-        <!-- MENÚ DESPLEGABLE 1: DESINSTALACIÓN -->
+        <!-- MENÚ DESPLEGABLE 1: DESINSTALACIÓN CON SU MANUAL VISUAL -->
         <div class="accordion-item">
             <input type="checkbox" id="menu1" class="accordion-toggle">
             <label for="menu1" class="accordion-header">
                 Paso 1: Desinstalar la App anterior
             </label>
             <div class="accordion-content">
-                <div class="desinstalacion-text">
-                    <p>Antes de instalar la nueva versión de <strong>Xupertv</strong>, es sumamente importante borrar por completo cualquier versión vieja instalada para evitar conflictos o errores de instalación.</p>
-                    <ol>
-                        <li>Ve al menú principal o <strong>Ajustes (Settings)</strong> de tu TV Box.</li>
-                        <li>Selecciona la opción de <strong>Aplicaciones (Apps)</strong>.</li>
-                        <li>Busca la aplicación anterior en la lista y selecciónala.</li>
-                        <li>Haz clic en el botón <strong>Desinstalar (Uninstall)</strong> y confirma la acción.</li>
-                    </ol>
-                    <div class="alert-box">
-                        <strong>⚠️ Nota:</strong> Una vez desinstalada la versión anterior, procede a desplegar el Paso 2 para comenzar con la nueva instalación limpia.
-                    </div>
+                
+                <!-- Paso A -->
+                <div class="step">
+                    <div class="step-title">Ir a Engrane de Configuración</div>
+                    <img src="images/a.jpg" alt="Ir a Engrane de Configuración" class="step-img">
                 </div>
+
+                <!-- Paso B -->
+                <div class="step">
+                    <div class="step-title">Entrar a APPS</div>
+                    <img src="images/b.jpg" alt="Entrar a APPS" class="step-img">
+                </div>
+
+                <!-- Paso C -->
+                <div class="step">
+                    <div class="step-title">Entrar a Xupertv</div>
+                    <img src="images/c.jpg" alt="Entrar a Xupertv" class="step-img">
+                </div>
+
+                <!-- Paso D -->
+                <div class="step">
+                    <div class="step-title">Borrar memoria Cache y ACEPTAR</div>
+                    <img src="images/d.jpg" alt="Borrar memoria Cache y ACEPTAR" class="step-img">
+                </div>
+
+                <!-- Paso E -->
+                <div class="step">
+                    <div class="step-title">Borrar Datos y ACEPTAR</div>
+                    <img src="images/e.jpg" alt="Borrar Datos y ACEPTAR" class="step-img">
+                </div>
+
+                <!-- Paso F -->
+                <div class="step">
+                    <div class="step-title">Desinstalar la aplicación</div>
+                    <img src="images/f.jpg" alt="Desinstalar la aplicación" class="step-img">
+                </div>
+
+                <!-- Paso G -->
+                <div class="step">
+                    <div class="step-title">Seleccionar Aceptar</div>
+                    <img src="images/g.jpg" alt="Seleccionar Aceptar" class="step-img">
+                </div>
+
             </div>
         </div>
 
-        <!-- MENÚ DESPLEGABLE 2: INSTALACIÓN CON TU MANUAL VISUAL -->
+        <!-- MENÚ DESPLEGABLE 2: INSTALACIÓN CON SU MANUAL VISUAL -->
         <div class="accordion-item">
             <input type="checkbox" id="menu2" class="accordion-toggle">
             <label for="menu2" class="accordion-header">
@@ -208,7 +223,7 @@
                 <!-- Paso 4 -->
                 <div class="step">
                     <div class="step-title">Click en Boton Descargar Xuper</div>
-                    <img src="images/4.jpg" alt="Click en Boton Descargar Xuper" class="step-img">
+                    <img src="images/4o.png" alt="Click en Boton Descargar Xuper" class="step-img">
                 </div>
 
                 <!-- Paso 5 -->
@@ -254,4 +269,3 @@
 
 </body>
 </html>
-
