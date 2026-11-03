@@ -9,10 +9,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f7f6;
             margin: 0;
+            padding: 20px;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
         }
         .container {
             text-align: center;
@@ -20,14 +20,15 @@
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 400px;
+            max-width: 500px;
             width: 100%;
+            margin-bottom: 30px;
         }
         .btn-descarga {
             display: block;
             color: white;
-            padding: 14px;
-            font-size: 1.1rem;
+            padding: 16px;
+            font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 8px;
@@ -41,16 +42,214 @@
             background-color: #218838; 
             transform: translateY(-2px); 
         }
+        
+        /* Estilos de los Menús Desplegables (Acordeón) */
+        .accordion-wrapper {
+            max-width: 700px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .accordion-item {
+            background-color: white;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .accordion-header {
+            background-color: #ffffff;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #24292e;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f0f2f5;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        .accordion-header:hover {
+            background-color: #f8f9fa;
+        }
+        .accordion-header::after {
+            content: '▼';
+            font-size: 0.9rem;
+            color: #6a737d;
+            transition: transform 0.3s;
+        }
+        
+        .accordion-toggle {
+            display: none;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 20px;
+            background-color: #ffffff;
+        }
+        
+        .accordion-toggle:checked ~ .accordion-content {
+            max-height: 7000px; /* Espacio de sobra para renderizar las 10 imágenes .jpg */
+            padding: 20px;
+        }
+        .accordion-toggle:checked ~ .accordion-header::after {
+            transform: rotate(180deg);
+        }
+
+        /* Contenido de la sección de desinstalación */
+        .desinstalacion-text {
+            color: #444;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            text-align: left;
+        }
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            color: #856404;
+        }
+
+        /* Estilos del manual de instalación */
+        .step {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e1e4e8;
+        }
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+        .step-img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Sección Principal de Descarga -->
     <div class="container">
-        <!-- Único botón para Android .apk -->
         <a href="https://github.com/tvX-cod/tvboxmx/releases/download/v1.01/NF4.35.0.apk
 " download class="btn-descarga apk">
             Descarga Xupertv
         </a>
+    </div>
+
+    <!-- Contenedor General de los Menús Desplegables -->
+    <div class="accordion-wrapper">
+
+        <!-- MENÚ DESPLEGABLE 1: DESINSTALACIÓN -->
+        <div class="accordion-item">
+            <input type="checkbox" id="menu1" class="accordion-toggle">
+            <label for="menu1" class="accordion-header">
+                Paso 1: Desinstalar la App anterior
+            </label>
+            <div class="accordion-content">
+                <div class="desinstalacion-text">
+                    <p>Antes de instalar la nueva versión de <strong>Xupertv</strong>, es sumamente importante borrar por completo cualquier versión vieja instalada para evitar conflictos o errores de instalación.</p>
+                    <ol>
+                        <li>Ve al menú principal o <strong>Ajustes (Settings)</strong> de tu TV Box.</li>
+                        <li>Selecciona la opción de <strong>Aplicaciones (Apps)</strong>.</li>
+                        <li>Busca la aplicación anterior en la lista y selecciónala.</li>
+                        <li>Haz clic en el botón <strong>Desinstalar (Uninstall)</strong> y confirma la acción.</li>
+                    </ol>
+                    <div class="alert-box">
+                        <strong>⚠️ Nota:</strong> Una vez desinstalada la versión anterior, procede a desplegar el Paso 2 para comenzar con la nueva instalación limpia.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENÚ DESPLEGABLE 2: INSTALACIÓN CON TU MANUAL VISUAL -->
+        <div class="accordion-item">
+            <input type="checkbox" id="menu2" class="accordion-toggle">
+            <label for="menu2" class="accordion-header">
+                Paso 2: Instalar la nueva App (Manual Visual)
+            </label>
+            <div class="accordion-content">
+                
+                <!-- Paso 1 -->
+                <div class="step">
+                    <div class="step-title">Abrir Appdrawer</div>
+                    <img src="https://githubusercontent.com" alt="Abrir Appdrawer" class="step-img">
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step">
+                    <div class="step-title">Abrir Chrome</div>
+                    <img src="https://githubusercontent.com" alt="Abrir Chrome" class="step-img">
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step">
+                    <div class="step-title">Entrar a Home</div>
+                    <img src="https://githubusercontent.com" alt="Entrar a Home" class="step-img">
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step">
+                    <div class="step-title">Click en Boton Descargar Xuper</div>
+                    <img src="https://githubusercontent.com" alt="Click en Boton Descargar Xuper" class="step-img">
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step">
+                    <div class="step-title">Click en Aceptar</div>
+                    <img src="https://githubusercontent.com" alt="Click en Aceptar" class="step-img">
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="step">
+                    <div class="step-title">Click en configuración</div>
+                    <img src="https://githubusercontent.com" alt="Click en configuración" class="step-img">
+                </div>
+
+                <!-- Paso 7 -->
+                <div class="step">
+                    <div class="step-title">Dar permiso a Chrome</div>
+                    <img src="https://githubusercontent.com" alt="Dar permiso a Chrome" class="step-img">
+                </div>
+
+                <!-- Paso 8 -->
+                <div class="step">
+                    <div class="step-title">Click en Instalar</div>
+                    <img src="https://githubusercontent.com" alt="Click en Instalar" class="step-img">
+                </div>
+
+                <!-- Paso 9 -->
+                <div class="step">
+                    <div class="step-title">Click en Abrir</div>
+                    <img src="https://githubusercontent.com" alt="Click en Abrir" class="step-img">
+                </div>
+
+                <!-- Paso 10 -->
+                <div class="step">
+                    <div class="step-title">Click en Permitir</div>
+                    <img src="https://githubusercontent.com" alt="Click en Permitir" class="step-img">
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
 </body>
